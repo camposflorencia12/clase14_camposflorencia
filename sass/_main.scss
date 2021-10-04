@@ -1,0 +1,133 @@
+body {
+    font-family: "Spartan", sans-serif;
+    font-weight: 300; 
+    background-color: rgb(238, 226, 234);
+    @media all and (min-width: 992px){
+        font-weight: 400; 
+    }
+}
+.contenedorNav {
+    border-bottom: 1px solid white;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 33%, rgba(255,218,224,1) 50%, rgba(249,151,158,1) 82%, rgba(236,112,127,1) 100%);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100; 
+    @media all and (min-width: 992px){
+        max-height: 68px;
+        background: rgb(255,255,255);
+        background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 15%, rgba(255,218,224,1) 25%, rgba(249,151,158,1) 56%, rgba(236,112,127,1) 100%);
+    }
+    li {
+        list-style-type: none;
+        padding: 0 10px; 
+    }
+    a {
+        text-decoration: none;
+        color: black;
+        font-size: 1em; 
+    }
+}
+.contenedorLogo {
+    img {
+        width: 34%;
+        /*margin-left: 20px; */
+    }  
+    @media all and (min-width: 992px) {
+            width: 200px;
+        img {
+            width: 64%;
+            margin-top: 5px;
+            /*margin-left: 85px; */
+        } 
+    }
+}  
+.contenedorHome {
+    overflow: hidden;
+}
+.sloganHome {
+    p {
+        font-size: 2rem;
+        text-align: center;
+        font-weight: bold;
+        margin-top: 40px;
+        color: rgb(173, 30, 37);
+        @media all and (min-width: 992px) {
+            font-size: 4rem;
+            text-align: left;
+            font-style: italic;
+        }
+    }
+}
+.pisoFlores{
+    background-image: url("../media/petalos_rosa2b.png");
+    background-size: cover;
+    background-position: bottom;
+    min-height: 200px;
+    max-height: 200px;
+    @media all and (min-width: 992px) {
+        min-height: 160px;
+    }
+}
+.homeImage{
+    background-image: url("../media/vela_home.jpeg");
+    background-size: cover;
+    border-radius: 80%;
+    background-position: center;
+    height: 285px;
+    max-width: 285px;
+    margin: 20px 0px 20px 0px;
+    @media all and (min-width: 992px){
+        height: 400px;   
+        max-width: 400px; 
+    }
+}
+
+.reload{
+    text-decoration: none;
+    color: black;
+}
+.carritoCompras{
+    display: none;
+}
+.finalInfo{
+    display:none;
+}
+
+.endRefresh{
+    display: none;
+}
+
+#footer{
+    border-top: 2px solid rgb(182, 68, 68);
+    min-height: 200px;
+}
+.contenedorFooter p{
+    vertical-align: middle;
+}
+.logoFooter {
+    background-image: url("../media/logo.PNG");
+    background-position: center;
+    background-size: contain;
+    border-radius: 50%;
+    min-height: 150px;
+    @media all and (min-width: 992px){
+        border-radius: 80%; 
+        background-size: cover; 
+        min-height: 210px;
+    }
+}
+
+.alert{
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    margin-top: 68px;
+    &.hide{
+        display: none;
+    }
+    &.remove{
+        display: none;
+    }
+}
