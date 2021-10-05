@@ -115,36 +115,35 @@ $(function () {
   };
 
   function buy() {
-    $('#descuento').append(`
+    $('#delivery').append(`
     <div>
       <div class="custom-control custom-checkbox">
           <input type="checkbox" class="checkBox1 custom-control-input" id="customCheck1">
-          <label class="custom-control-label" for="customCheck1">Tengo cupón de descuento</label>
-      </div>
-      <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="checkBox2 custom-control-input" id="customCheck2">
-          <label class="custom-control-label" for="customCheck2">Quiero el envío</label>
+          <label class="custom-control-label" for="customCheck1">Quiero el envío!</label>
       </div>
       <div class="custom-control custom-checkbox">
           <input type="checkbox" class="checkBox3 custom-control-input" id="customCheck3">
-          <label class="custom-control-label" for="customCheck3">Ninguna de las anteriores ;)</label>
+          <label class="custom-control-label" for="customCheck3">Tilda para visualizar el monto de tu compra ;)</label>
       </div>
     </div>
         `)
 
     $('.finalInfo').show();
-    $('#descuento div').addClass("cartItem");
-    $('.checkBox1').change(applyDiscount);
-    $('.checkBox2').change(addDeliveryCost);
+    $('#delivery div').addClass("cartItem");
+
+    const customCheck1 = document.getElementById('customCheck1');
+    customCheck1.addEventListener("change", comprueba, false);
+    function comprueba (){
+      if(customCheck1.checked){
+        addDeliveryCost();
+      }else{
+        notAddDeliveryCost();
+      }
+    }
+
     $('.checkBox3').change(cartAmounta);
     $('#btnBuy').prop('disabled', true);   
     $('#emptyCart').prop('disabled', true); 
-  }
-
-  function applyDiscount() {
-    total = total - (total * 20 / 100);
-    const buyAmount = document.querySelector(".buyAmount");
-    buyAmount.innerHTML = `El total de tu compra es: $${total}`;
   }
 
   function addDeliveryCost() {
@@ -153,6 +152,13 @@ $(function () {
     const buyAmount = document.querySelector(".buyAmount");
     buyAmount.innerHTML = `El total de tu compra es: $${total}`;
   }  
+
+  function notAddDeliveryCost() {
+    let deliveryCost = 250;
+    total = total - deliveryCost;
+    const buyAmount = document.querySelector(".buyAmount");
+    buyAmount.innerHTML = `El total de tu compra es: $${total}`;
+  } 
 
   function cartAmounta() {
     total = total;
@@ -190,13 +196,14 @@ $(function () {
               <p class="card-text">${respuesta.redireccion}</p>
             </div>
             <div class="card-footer text-muted">
-              <a class="reload" href="javascript:window.location.reload()">Aceptar</a>
+              <a class="reload" href="https://www.whatsapp.com/" rel="noopener noreferrer" target="_blank">Aceptar</a>
             </div>
           </div>`);
           }  
       });
       $('#message').prop('disabled', true); 
   });
+  
 });
 
 
