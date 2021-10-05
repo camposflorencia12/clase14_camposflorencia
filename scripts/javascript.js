@@ -1,6 +1,6 @@
 let cart = [];
 let total = 0;
-const URLGET   = "https://jsonplaceholder.typicode.com/posts"
+const URLPOST   = "https://jsonplaceholder.typicode.com/posts"
 const infoPost =  { nombre: "ANAHATA", mensaje: "Muchas gracias por elegir nuestros productos!", redireccion: "Serás redireccionado a nuestro chat de WhatsApp para concluir la compra ;)" }
 
 $(function () {
@@ -173,14 +173,12 @@ $(function () {
   $('#btnBuy').click( () => $('.totalCartItem').hide());
   $('#btnBuy').click( () => $('.endRefresh').show());
   $('#emptyCart').click(emptyCart);
-  //$('#message').click( () => $('.endMessage').slideDown());
   $('.buttonAdd').on('click', () => 
     $('.hide').fadeIn("slow", () => $('.hide').fadeOut(2000)));
   $('.delete').on('click', () => 
     $('.remove').fadeIn("slow", () => $('.remove').fadeOut(2000)));
-    
   $('#message').click(() => { 
-    $.post(URLGET, infoPost ,(respuesta, estado) => {
+    $.post(URLPOST, infoPost ,(respuesta, estado) => {
         if(estado === "success"){
           $('#endMessage').append(`
           <div>
@@ -192,11 +190,12 @@ $(function () {
               <p class="card-text">${respuesta.redireccion}</p>
             </div>
             <div class="card-footer text-muted">
-              <a class="reload" href="javascript:location.reload()">Aceptar</a>
+              <a class="reload" href="javascript:window.location.reload()">Aceptar</a>
             </div>
           </div>`);
           }  
       });
+      $('#message').prop('disabled', true); 
   });
 });
 

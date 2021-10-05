@@ -28,24 +28,22 @@ body {
         color: black;
         font-size: 1em; 
     }
-}
-.contenedorLogo {
-    img {
-        width: 34%;
-        /*margin-left: 20px; */
-    }  
-    @media all and (min-width: 992px) {
-            width: 200px;
+    .contenedorLogo {
         img {
-            width: 64%;
-            margin-top: 5px;
-            /*margin-left: 85px; */
-        } 
-    }
-}  
-.contenedorHome {
-    overflow: hidden;
+            width: 34%;
+            /*margin-left: 20px; */
+        }  
+        @media all and (min-width: 992px) {
+                width: 200px;
+            img {
+                width: 64%;
+                margin-top: 5px;
+                /*margin-left: 85px; */
+            } 
+        }
+    }  
 }
+
 .sloganHome {
     p {
         font-size: 2rem;
@@ -61,7 +59,7 @@ body {
     }
 }
 .pisoFlores{
-    background-image: url("../media/petalos_rosa2b.png");
+    background-image: url("../../media/petalos_rosa2b.png");
     background-size: cover;
     background-position: bottom;
     min-height: 200px;
@@ -71,7 +69,7 @@ body {
     }
 }
 .homeImage{
-    background-image: url("../media/vela_home.jpeg");
+    background-image: url("../../media/vela_home.jpeg");
     background-size: cover;
     border-radius: 80%;
     background-position: center;
@@ -83,7 +81,19 @@ body {
         max-width: 400px; 
     }
 }
-
+.imgQuienesSomos{
+    background-image: url("../../media/vela_quienessomos.jpg");
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset;
+    height: 285px;
+    max-width: 285px;
+    margin: 20px 0px 20px 0px;
+    @media all and (min-width: 992px){
+        height: 400px;   
+        max-width: 400px; 
+    }
+}
 .reload{
     text-decoration: none;
     color: black;
@@ -91,6 +101,20 @@ body {
 .carritoCompras{
     display: none;
 }
+
+.input__element{
+    width: 20px;
+    text-align: center;
+    @media all and (min-width: 992px){
+        width: 150px;
+        text-align: center;
+    }
+}
+
+#descuento{
+    margin-top: 30px;
+}
+
 .finalInfo{
     display:none;
 }
@@ -102,20 +126,22 @@ body {
 #footer{
     border-top: 2px solid rgb(182, 68, 68);
     min-height: 200px;
-}
-.contenedorFooter p{
-    vertical-align: middle;
-}
-.logoFooter {
-    background-image: url("../media/logo.PNG");
-    background-position: center;
-    background-size: contain;
-    border-radius: 50%;
-    min-height: 150px;
-    @media all and (min-width: 992px){
-        border-radius: 80%; 
-        background-size: cover; 
-        min-height: 210px;
+    .logoFooter {
+        background-image: url("../../media/logo.PNG");
+        background-position: center;
+        background-size: contain;
+        border-radius: 50%;
+        min-height: 150px;
+        @media all and (min-width: 992px){
+            border-radius: 62%; 
+            background-size: inherit;
+            min-height: 186px;
+        }
+    }
+    &.contenedorFooter{
+        p{
+            vertical-align: middle;
+        }
     }
 }
 
