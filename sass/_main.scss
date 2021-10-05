@@ -59,13 +59,15 @@ body {
     }
 }
 .pisoFlores{
-    background-image: url("../../media/petalos_rosa2b.png");
+    background-image: url("../../media/petalos_mobile.png");
     background-size: cover;
     background-position: bottom;
-    min-height: 200px;
-    max-height: 200px;
+    height: 112px;
+    margin-top: 50px;
     @media all and (min-width: 992px) {
         min-height: 160px;
+        background-image: url("../../media/petalos_rosa2b.png");
+        max-height: 200px;
     }
 }
 .homeImage{
@@ -132,6 +134,7 @@ body {
         background-size: contain;
         border-radius: 50%;
         min-height: 105px;
+        margin-bottom: 22px;
         @media all and (min-width: 992px){
             border-radius: 62%; 
             background-size: inherit;
